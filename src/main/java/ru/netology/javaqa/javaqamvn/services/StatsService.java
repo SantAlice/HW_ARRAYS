@@ -41,29 +41,25 @@ public class StatsService {
     }
 
     public static int getAboveAverage(int[] sales) {
-        int monthAboveAverage = sales[0];
-        int month = 0;
         int average = getAverage(sales);
+        int monthAboveAverage = 0;
         for (int sale : sales) {
-            if (sales[0] < average){
-                monthAboveAverage = month;
+            if (average < sale){
+              monthAboveAverage += 1;
             }
-            month = month = month +1;
         }
-        return monthAboveAverage +1;
+        return monthAboveAverage;
     }
 
     public static int getBelowAverage(int[] sales) {
-        int monthBelowAverage = sales[0];
-        int month = 0;
         int average = getAverage(sales);
+        int monthBelowAverage = 0;
         for (int sale : sales) {
-            if (sales[0] < average){
-                monthBelowAverage = month;
+            if (average < sale){
+                monthBelowAverage += 1;
             }
-            month = month = month +1;
         }
-        return monthBelowAverage +1;
+        return monthBelowAverage;
     }
 
 
