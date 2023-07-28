@@ -55,7 +55,7 @@ public class StatsService {
         int average = getAverage(sales);
         int monthBelowAverage = 0;
         for (int sale : sales) {
-            if (average < sale){
+            if (average > sale){
                 monthBelowAverage += 1;
             }
         }
